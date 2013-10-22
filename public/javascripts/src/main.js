@@ -13,7 +13,7 @@ require.config( {
     , Monad: '/javascripts/vendor/typeclasses/monad'
 	  , EventStreams: '/javascripts/vendor/typeclasses/eventstreams'
 	  , App: '/javascripts/src/app/controllers/App'
-	  , Post: '/javascripts/src/app/controllers/Post'
+	  , Search: '/javascripts/src/app/controllers/Search'
 	  , Headline: '/javascripts/src/app/controllers/Headline'
 	  , Likes: '/javascripts/src/app/controllers/Likes'
 	  , Comments: '/javascripts/src/app/controllers/Comments'
@@ -59,16 +59,16 @@ require.config( {
   	    		, exports: 'Repo'
   	    	}
         , 'App' : {
-        			deps: ['Palace', 'Socket', 'Repo', 'Headline', 'Post', 'Comments', 'Likes']
+        			deps: ['Palace', 'Socket', 'Repo', 'Headline', 'Search', 'Comments', 'Likes']
         		, exports: "App"
         	}
 				, 'Headline' : {
         			deps: ['Palace']
         		, exports: 'Headline'
         	}
-				, 'Post' : {
+				, 'Search' : {
         			deps: ['Palace']
-        		, exports: 'Post'
+        		, exports: 'Search'
         	}
 				, 'Comments' : {
         			deps: ['Palace']

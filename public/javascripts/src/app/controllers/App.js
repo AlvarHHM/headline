@@ -3,5 +3,6 @@ var App = function(){
 	Palace.expose();
 
 	register('Headline', startController('Headline'));
+  register('Search', startController('Search'));
 	// register('Headline', spawn('Palace', 'startController', ['Headline']));
 };
