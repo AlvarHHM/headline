@@ -2,7 +2,6 @@ var Headline = function(view, args){
   var Palace = require('Palace');
   Palace.expose();
 
-  
   var root
 
     , add = function(x, y) { return x + y; }.autoCurry()
@@ -10,12 +9,12 @@ var Headline = function(view, args){
   //+ updateTitle :: Headline -> Html
     , updateTitle =  compose(html('#title', view), pluck('title'))
 
-  //+ populateScroller :: Headline -> Html
+  //+ populateScroller :: Html -> Headline -> Html
     , populateScroller = function(view, headline) {
-        var images = reduce(function(acc, i) { return acc+'<img src="'+i+'" class="item">'; }, '', headline.images);
-        var v = html('#yo', view, images);
-        console.log('v', v);
-        return v;
+        var images = mconcat(
+          map(function(i) { return '<img src="'+i+'" class="item" />'; }, headline.images)
+        );
+        return html('#sliderContent', view, images);
       }
 
   //+ populatePage :: Headline -> Html
@@ -31,7 +30,7 @@ var Headline = function(view, args){
       }
 
   //+ init :: IO()
-    , init = compose(updateHtml('#main'), populatePage, getHeadline)
+    , init = compose(addListeners, updateHtml('#main'), populatePage, getHeadline)
     ;
 
   init();

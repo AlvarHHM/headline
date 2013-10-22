@@ -9,6 +9,7 @@ require.config( {
     , Typeclasses: '/javascripts/vendor/typeclasses/support/types'
     , Functor: '/javascripts/vendor/typeclasses/functor'
     , Applicative: '/javascripts/vendor/typeclasses/applicative'
+    , Monoid: '/javascripts/vendor/typeclasses/monoid'
     , Monad: '/javascripts/vendor/typeclasses/monad'
 	  , EventStreams: '/javascripts/vendor/typeclasses/eventstreams'
 	  , App: '/javascripts/src/app/controllers/App'
@@ -36,6 +37,9 @@ require.config( {
         , 'Applicative': {
 						deps: ['Typeclasses']
        	 }
+	      , 'Monoid': {
+						deps: ['Typeclasses']
+	        }
 				, 'Monad': {
 						deps: ['Functor']
         	}
@@ -89,10 +93,11 @@ require({baseUrl: "/javascripts/src/" },
 		, 'Palace'
 		, 'Typeclasses'
 		, 'Functor'
+    , 'Monoid'
 		, 'Monad'
 		, 'text'
 	],
-	function(require, App, FunctionalJS, PreludeJS, FlapJax, EventStreams, Handlebars, Palace, Typeclasses, Functor, Monad){
+	function(require, App, FunctionalJS, PreludeJS, FlapJax, EventStreams, Handlebars, Palace, Typeclasses, Functor, Monoid, Monad){
 		PreludeJS.expose();
 		IS_WORKER = !(typeof document.cookie == 'string'); //hack
 		if(!IS_WORKER) App();
