@@ -1,5 +1,5 @@
 <tr id="{{id}}" class="row">
   <td>
-    {{name}}
+    {{title}}
   </td>
 </tr>

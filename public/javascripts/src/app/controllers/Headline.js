@@ -29,9 +29,10 @@ var Headline = function(view, args){
           });
       }
 
-  //+ init :: IO()
-    , init = compose(addListeners, updateHtml('#main'), populatePage, getHeadline)
+  //+ init :: E -> IO()
+    , init = compose(addListeners, updateHtml('#main'), populatePage)
     ;
 
+  fmap(init, on('render', 'Headline'))
   init();
 };
