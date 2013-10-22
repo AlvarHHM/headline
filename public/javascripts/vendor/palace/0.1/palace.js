@@ -8,7 +8,7 @@ define(['require', 'FunctionalJS', 'PreludeJS','Functor','EventStreams', 'Applic
   var CHANNEL_REGISTRY = {};
   var GLOBAL = (typeof global == "object") ? global : window;
   var TEMPLATE_PATH = '/javascripts/src/app/templates/';
-  
+
   // TEMPLATING
   // ====================================================
   var Render = (function() {
@@ -31,7 +31,7 @@ define(['require', 'FunctionalJS', 'PreludeJS','Functor','EventStreams', 'Applic
             throw("Couldn't get template: "+path); // TODO: make this pure prob.
           }
         }
-    
+
     //+ _getTemplate :: String -> (HandlebarsTemplate -> b)
       , _getTemplate = function(path, cb) {
           require(['text!'+_getPath(path)], compose(cb, Handlebars.compile));
@@ -61,7 +61,6 @@ define(['require', 'FunctionalJS', 'PreludeJS','Functor','EventStreams', 'Applic
           cache[path] = template;
           return template(data);
         }.autoCurry();
-  	
   	return {render: render, render_: render_}
   })();
 
@@ -273,7 +272,7 @@ define(['require', 'FunctionalJS', 'PreludeJS','Functor','EventStreams', 'Applic
 
   /*  startController: Finds a view of the same name, renders it, then calls
       the function with it and the args
-  */  
+  */
   //+ startController :: String -> {} -> Channel
   var startController = function(name, args) {
     var args = args || {}
@@ -316,7 +315,6 @@ define(['require', 'FunctionalJS', 'PreludeJS','Functor','EventStreams', 'Applic
 
   // EXPORTING
   // ========================================================
-  
   Palace = { render: Render.render
            , render_: Render.render_
            , grab: grab
@@ -335,13 +333,13 @@ define(['require', 'FunctionalJS', 'PreludeJS','Functor','EventStreams', 'Applic
            , addUIOrEventListener: addUIOrEventListener
            , addUIOrEventListenerW: addUIOrEventListenerW
            };
-  
+
   Palace.expose = function expose(env) {
-    var fn;                             
+    var fn;
     if(!env) {
       env = (typeof global == "object") ? global : window;
     }
-    
+
     for (fn in Palace) {
       if (fn !== 'expose' && Palace.hasOwnProperty(fn)) {
         env[fn] = Palace[fn];
