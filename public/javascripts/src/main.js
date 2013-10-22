@@ -15,7 +15,7 @@ require.config( {
 	  , App: '/javascripts/src/app/controllers/App'
 	  , Search: '/javascripts/src/app/controllers/Search'
 	  , Headline: '/javascripts/src/app/controllers/Headline'
-	  , Likes: '/javascripts/src/app/controllers/Likes'
+	  , Results: '/javascripts/src/app/controllers/Results'
 	  , Comments: '/javascripts/src/app/controllers/Comments'
 	  , Socket: '/javascripts/src/app/lib/Socket'
 	  , Http: '/javascripts/src/app/lib/Http'
@@ -59,7 +59,7 @@ require.config( {
   	    		, exports: 'Repo'
   	    	}
         , 'App' : {
-        			deps: ['Palace', 'Socket', 'Repo', 'Headline', 'Search', 'Comments', 'Likes']
+        			deps: ['Palace', 'Socket', 'Repo', 'Headline', 'Search', 'Comments', 'Results']
         		, exports: "App"
         	}
 				, 'Headline' : {
@@ -74,9 +74,9 @@ require.config( {
         			deps: ['Palace']
         		, exports: 'Comments'
         	}
-				, 'Likes' : {
+				, 'Results' : {
         			deps: ['Palace']
-        		, exports: 'Likes'
+        		, exports: 'Results'
         	}
     	}
 });
