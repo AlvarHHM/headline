@@ -7,45 +7,18 @@ ap = function(a1, a2) {
   return a1.ap(a2);
 }.autoCurry();
 
-// ap = function() {
-//   var args = [].slice.apply(arguments)
-//      , len = args.length-2
-//      , r = args[0];
-//   for(var i = 1; i <= len; i++) r = r.ap(r[i]);
-//   return r;
-// }.autoCurry(2);
-
 pure = function(f) {
   if(typeof f == "string") f = f.toFunction();
   f.ap = fmap(f);
   return f;
 }
 
-liftA = function(f) {
-  var r = pure(f)
-    , args = [].slice.apply(arguments, [1])
-    , arity = f.arity || f.length;
-
-  var f = function() {
-    var all_args = arguments.length ? args.concat(arguments) : args;
-    var rest = all_args.length-1;
-    for(var i = 0; i <= rest; i++) r = r.ap(all_args[i]);
-    return r;
-  };
-
-  return (args.length >= arity) ? f() : f.autoCurry(arity);
-}
-
-// Applicative(Array, {
-//   pure: Array, // needs to be infinate to be correct ziplist
-//   ap: function(a2) {
-//     // ziplist implementation
-//     return map(function(f,i){ return f.toFunction()(a2[i]); }, this);
-//   }
-// });
-
 liftA2 = function(f, a1, a2) {
   return pure(f).ap(a1).ap(a2);
+}.autoCurry();
+
+liftA3 = function(f, a1, a2, a3) {
+  return pure(f).ap(a1).ap(a2).ap(a3);
 }.autoCurry();
 
 Applicative(Function, {
@@ -56,4 +29,12 @@ Applicative(Function, {
             return f(x, g(x));
         };
     }
+});
+
+Applicative(Array, {
+  pure: Array, // needs to be infinite to be correct ziplist
+  ap: function(a2) {
+    // ziplist implementation
+    return map(function(f,i){ return f(a2[i]); }, this);
+  }
 });
