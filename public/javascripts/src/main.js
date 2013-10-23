@@ -25,9 +25,6 @@ require.config( {
         	'Handlebars': {
             exports: 'Handlebars'
         	}
-      	, 'PreludeJS': {
-						deps: ['FunctionalJS']
-        	}
 				, 'Typeclasses': {
 						deps: ['FunctionalJS']
 	        }
@@ -65,10 +62,6 @@ require.config( {
 				, 'Headline' : {
         			deps: ['Palace']
         		, exports: 'Headline'
-        	}
-				, 'Comments' : {
-        			deps: ['Palace']
-        		, exports: 'Comments'
         	}
 				, 'Results' : {
         			deps: ['Palace']
