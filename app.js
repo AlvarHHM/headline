@@ -2,16 +2,12 @@
 /**
  * Module dependencies.
  */
-POSTS = [{id:1, title: "one", body: "I am post one"}, {id: 2, title: 'two', body: "I am post two"}]
-
-COMMENTS = { "1": [{body: "This post is sexy!"}, {body: "I am spam"}]
-					 , "2": [{body: "I don't understand..."}, {body: "You should really stop blogging"}]
-					 }
-
-LIKES = { "1": [{user: "Joe"}]
-				, "2": [{user: "Bob"}, {user: "Anne"}]
-				}
-
+var images1 =  ['images/demo/field.jpg', 'images/demo/gnome.jpg', 'images/demo/pencils.jpg', 'images/demo/golf.jpg'];
+var images2 =  ['images/demo/field.jpg', 'images/demo/golf.jpg'];
+headlines = [
+  {id: 1, title: 'one', images: images1},
+  {id: 2, title: 'two', images: images2}
+]
 var express = require('express')
 	, app = express.createServer()
  	, io = require('socket.io').listen(app, {origins: '*:*'});	
@@ -34,18 +30,8 @@ app.get('/test', function(req, res) {
 	res.render('test', {title: 'SocketTest'})
 });
 
-app.get('/posts', function(req, res) {
-	res.send(JSON.stringify(POSTS));
-});
-
-app.post('/posts', function(req, res) {
-	console.log(req.body, req.params);
-	POSTS.push(req.body)
-	res.send(JSON.stringify(POSTS));
-});
-
-app.get('/comments', function(req, res) {
-	res.send(JSON.stringify(COMMENTS[req.query.id]));
+app.get('/headlines', function(req, res) {
+	res.send(JSON.stringify(headlines));
 });
 
 // Configuration
