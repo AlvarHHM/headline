@@ -66,10 +66,6 @@ require.config( {
         			deps: ['Palace']
         		, exports: 'Headline'
         	}
-				, 'Search' : {
-        			deps: ['Palace']
-        		, exports: 'Search'
-        	}
 				, 'Comments' : {
         			deps: ['Palace']
         		, exports: 'Comments'
@@ -99,6 +95,7 @@ require({baseUrl: "/javascripts/src/" },
 	],
 	function(require, App, FunctionalJS, PreludeJS, FlapJax, EventStreams, Handlebars, Palace, Typeclasses, Functor, Monoid, Monad){
 		PreludeJS.expose();
+		Palace.expose();
 		IS_WORKER = !(typeof document.cookie == 'string'); //hack
 		if(!IS_WORKER) App();
 });

@@ -1,10 +1,13 @@
-var Palace = require('Palace');
+define(['Palace'], function(Palace) {
 
-var Search = function(view, args){
-  Palace.expose();
+  return function(view, args){
+    Palace.expose();
 
-  //+ tellOthers :: Event -> Event
-  var tellOthers = function(e){return emit('submit', 'Search', {term: $('#term').val()} )}
-  
-  fmap(tellOthers, on('click', '#searched'))
-};
+    //+ tellOthers :: Event -> Event
+    var tellOthers = function(e){return emit('submit', 'Search',
+      {term: $('#term').val()} )
+    }
+
+    fmap(tellOthers, on('click', '#searched'))
+  };
+});
