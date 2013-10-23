@@ -55,10 +55,6 @@ require.config( {
   	    			deps: ['Http', 'Socket']
   	    		, exports: 'Repo'
   	    	}
-        , 'App' : {
-        			deps: ['Palace', 'Socket', 'Repo', 'Headline', 'Search', 'Comments', 'Results']
-        		, exports: "App"
-        	}
 				, 'Headline' : {
         			deps: ['Palace']
         		, exports: 'Headline'

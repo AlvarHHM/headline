@@ -1,6 +1,10 @@
 define([
   'Palace',
-  'Search'
+  'Search',
+  'Socket',
+  'Repo',
+  'Headline',
+  'Results'
 ], function(Palace, Search) {
   return function(){
     Palace.register('Headline', startController('Headline'));
