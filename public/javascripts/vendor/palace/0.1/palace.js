@@ -274,14 +274,12 @@ define(['require', 'FunctionalJS', 'PreludeJS','Functor','EventStreams', 'Applic
       the function with it and the args
   */
   //+ startController :: String -> {} -> Channel
-  var startController = function(name, args) {
-    var args = args || {}
+  var startController = function(name, fn) {
     var view_of_same_name = Render.render(name, {});
-    var fn = GLOBAL[name];
-    fmap(function(view) { fn(view, args); }, view_of_same_name);
+    fn = fn || GLOBAL[name];
+    fmap(function(view) { fn(view); }, view_of_same_name);
     return makeChannel(name, {}); // make a process to represent this controller
   }
-
 
   // JQUERY REPLACMENT
   // This needs a crapload of work. We're on workers so we have no dom
