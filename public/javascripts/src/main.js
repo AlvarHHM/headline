@@ -55,14 +55,6 @@ require.config( {
   	    			deps: ['Http', 'Socket']
   	    		, exports: 'Repo'
   	    	}
-				, 'Headline' : {
-        			deps: ['Palace']
-        		, exports: 'Headline'
-        	}
-				, 'Results' : {
-        			deps: ['Palace']
-        		, exports: 'Results'
-        	}
     	}
 });
 
