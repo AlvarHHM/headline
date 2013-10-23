@@ -6,8 +6,8 @@ require.config( {
 	  , FlapJax: '/javascripts/vendor/flapjax'
     , FunctionalJS: '/javascripts/vendor/FunctionalJS/functional'
     , PreludeJS: '/javascripts/vendor/PreludeJS/prelude'
-    , Typeclasses: '/javascripts/vendor/typeclasses/support/types'
-    , Functor: '/javascripts/vendor/typeclasses/functor'
+    , types: '/javascripts/vendor/typeclasses/support/types'
+    , functor: '/javascripts/vendor/typeclasses/functor'
     , Applicative: '/javascripts/vendor/typeclasses/applicative'
     , Monoid: '/javascripts/vendor/typeclasses/monoid'
     , Monad: '/javascripts/vendor/typeclasses/monad'
@@ -25,23 +25,8 @@ require.config( {
         	'Handlebars': {
             exports: 'Handlebars'
         	}
-				, 'Typeclasses': {
-						deps: ['FunctionalJS']
-	        }
-	      , 'Functor': {
-						deps: ['Typeclasses']
-	        }
-        , 'Applicative': {
-						deps: ['Typeclasses']
-       	 }
-	      , 'Monoid': {
-						deps: ['Typeclasses']
-	        }
-				, 'Monad': {
-						deps: ['Functor']
-        	}
 				, 'EventStreams': {
-						deps: ['FlapJax', 'Functor', 'Monad']
+						deps: ['FlapJax', 'functor', 'Monad']
         	}
       	, 'Socket' : {
 	      			deps: ['Palace']
@@ -68,8 +53,8 @@ require({baseUrl: "/javascripts/src/" },
 		, 'EventStreams'
 		, 'Handlebars'
 		, 'Palace'
-		, 'Typeclasses'
-		, 'Functor'
+		, 'types'
+		, 'functor'
     , 'Monoid'
 		, 'Monad'
 		, 'text'

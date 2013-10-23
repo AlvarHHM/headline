@@ -1,3 +1,4 @@
+
 (function() {
   Functor(EventStream, {
     fmap: function(f) {
