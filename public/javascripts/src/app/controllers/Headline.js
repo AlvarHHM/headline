@@ -34,6 +34,5 @@ define(['Palace'], function(Palace) {
       ;
 
     fmap(init, on('render', 'Headline'))
-    init();
   };
 });

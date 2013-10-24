@@ -295,8 +295,9 @@ define(['require', 'FunctionalJS', 'PreludeJS','functor','EventStreams', 'Applic
       }.autoCurry()
     , click = function(fn, el){ return el.click(fn); }.autoCurry()
     , append = function(el, doc, h) {
-        if(h.join) h = h.join(""); // [] || ""
-        return (doc || "").replace(RegExp('<'+el+'(.*)'), function(m){ return m+h; });
+        return $(el, doc).append(h);
+        // if(h.join) h = h.join(""); // [] || ""
+        // return (doc || "").replace(RegExp('<'+el+'(.*)'), function(m){ return m+h; });
       }.autoCurry()
     , css = function(style, el) {
         $(el).css(style);
