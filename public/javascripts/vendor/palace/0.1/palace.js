@@ -259,8 +259,7 @@ define(['require', 'FunctionalJS', 'PreludeJS','functor','EventStreams', 'Applic
   //+ register :: String -> {} -> Channel
   var register = function(name, obj) {
     obj = (obj || {});
-    CHANNEL_REGISTRY[name] = obj.emit ? obj : makeChannel(name, obj);
-    return CHANNEL_REGISTRY[name];
+    return CHANNEL_REGISTRY[name] = obj.emit ? obj : makeChannel(name, obj);
   }
 
   /*  spawn: kicks off actor on a new worker thread */
@@ -275,10 +274,9 @@ define(['require', 'FunctionalJS', 'PreludeJS','functor','EventStreams', 'Applic
   */
   //+ startController :: String -> {} -> Channel
   var startController = function(name, fn) {
-    var view_of_same_name = Render.render(name, {});
+    register(name);
     fn = fn || GLOBAL[name];
-    fmap(fn, view_of_same_name);
-    return makeChannel(name, {}); // make a process to represent this controller
+    return fn(Render.render_(name));
   }
 
   // JQUERY REPLACMENT

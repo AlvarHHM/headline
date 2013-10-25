@@ -16,8 +16,8 @@ define([
   return function() {
     register('Headline');
     Headline();
-    register('Search', startController('Search', Search));
-    register('Results', startController('Results', Results));
+    startController('Search', Search);
+    startController('Results', Results);
     Dashboard();
     // register('Headline', spawn('Palace', 'startController', ['Headline'])); }
   }
