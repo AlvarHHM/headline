@@ -1,14 +1,10 @@
 define(['Palace'], function(Palace) {
-  return function(view, args){
+  return function(){
     Palace.expose();
 
-    var root
-
-      , add = function(x, y) { return x + y; }.autoCurry()
-
+    var view = render_('Headline', {})
     //+ updateTitle :: Headline -> Html
       , updateTitle =  compose(html('#title', view), pluck('title'))
-
     //+ populateScroller :: Html -> Headline -> Html
       , populateScroller = function(view, headline) {
           var images = mconcat(
