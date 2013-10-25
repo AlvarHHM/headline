@@ -5,8 +5,8 @@ define([
     Palace
   , Trending
 ) {
-  return function(view) {
-    updateHtml('#main', view);
+  return function() {
+    updateHtml('#main', render_('Dashboard'));
     Trending();
     // register('Headline', spawn('Palace', 'startController', ['Headline']));
   }

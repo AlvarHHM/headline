@@ -16,10 +16,8 @@ define(['Palace'], function(Palace) {
           );
           return html('#sliderContent', view, images);
         }
-
     //+ populatePage :: Headline -> Html
       , populatePage = S(populateScroller, updateTitle)
-
     //+ getHeadline :: _ -> {title: String}
       , getHeadline = K({title: "My Title", images: ['images/demo/field.jpg', 'images/demo/gnome.jpg', 'images/demo/pencils.jpg', 'images/demo/golf.jpg']})
 

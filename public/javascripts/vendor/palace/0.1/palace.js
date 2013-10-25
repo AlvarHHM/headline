@@ -277,7 +277,7 @@ define(['require', 'FunctionalJS', 'PreludeJS','functor','EventStreams', 'Applic
   var startController = function(name, fn) {
     var view_of_same_name = Render.render(name, {});
     fn = fn || GLOBAL[name];
-    fmap(function(view) { fn(view); }, view_of_same_name);
+    fmap(fn, view_of_same_name);
     return makeChannel(name, {}); // make a process to represent this controller
   }
 
