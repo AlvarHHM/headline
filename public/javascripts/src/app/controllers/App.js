@@ -14,7 +14,8 @@ define([
   , Dashboard
 ) {
   return function() {
-    register('Headline', startController('Headline', Headline));
+    Headline();
+    register('Headline');
     register('Search', startController('Search', Search));
     register('Results', startController('Results', Results));
     Dashboard();

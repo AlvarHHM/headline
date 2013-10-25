@@ -27,6 +27,7 @@ define(['Palace'], function(Palace) {
       }
       , showHeadline = compose(
             emit('render', 'Headline')
+          , log
           , retrieveResult
           , pluck('id')
           , pluck('currentTarget')
