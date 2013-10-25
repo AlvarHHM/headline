@@ -7,6 +7,9 @@ define(['Palace', 'HighCharts'], function(Palace) {
 
       , fillChart = function(data) {
           $('#new_insights_chart').highcharts({
+             chart: {
+                type: 'column'
+              },
               title: {
                   text: 'Monthly Average Temperature',
                   x: -20 //center
@@ -37,7 +40,10 @@ define(['Palace', 'HighCharts'], function(Palace) {
                   verticalAlign: 'middle',
                   borderWidth: 0
               },
-              series: data.ys
+              series: data.ys,
+              credits:{
+                enabled:false
+              }
           });
       }
 

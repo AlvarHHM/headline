@@ -15,6 +15,7 @@
     <link href="stylesheets/assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="stylesheets/assets/css/docs.css" rel="stylesheet">
     <link href="stylesheets/assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+    <link href="stylesheets/assets/css/main.css" rel="stylesheet">
     <style>
         #main {
             margin-bottom: 100px;
@@ -54,10 +55,15 @@
   </head>
   <body>
     <div class="container">
-      <form id='search-form' accept-charset="UTF-8" action="/" id="search" method="post">
-        <input id="term" size="30" type="text" />
-        <div class="submit"><input name="commit" type="submit" value="Search" /></div>
-      </form>
+      <div id="header">
+        <a href="#insights" id="insights">Insights</a>
+        <a href="#how_it_works" id="insights">How It Works</a>
+        <a href="#admin" id="admin">Admin</a>
+        <form id='search-form' accept-charset="UTF-8" action="/" id="search" method="post">
+          <input id="term" size="30" type="text" />
+          <div class="submit"><input name="commit" type="submit" value="Search" /></div>
+        </form>
+      </div>
       <div id="wrapper">
         <div id="main"></div>
       </div>

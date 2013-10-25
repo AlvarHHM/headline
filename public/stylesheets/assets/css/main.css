@@ -1,0 +1,45 @@
+.clear {
+	clear: both;
+}
+
+#header {
+	background-color: #000;
+}
+
+#header a {
+	color: #fff;
+	padding: 10px;
+	display: inline-block;
+}
+
+#search-form {
+	text-align: right;
+	margin-right: 20%;
+	padding: 10px;
+}
+
+#new_insights {
+	float: left;
+}
+
+#dashboard div.box {
+	border: 1px solid black;
+	padding: 20px;
+	float: left;
+	margin: 10px;
+}
+
+#dashboard div.box h3{
+	background-color: #009D99;
+	padding: 20px;
+	color: #fff;
+}
+
+#live_activity {
+	position: absolute;
+	top: 225px;
+	right:50px;
+	height: 80%;
+	background-color: #EFEFEF;
+	width: 25%;
+}
