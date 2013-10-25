@@ -15,8 +15,7 @@ define([
   , Socket
 ) {
   return function() {
-    TEST = Socket.create('http://localhost:4000');
-    register('socket', TEST);
+    register('socket', Socket.create('http://localhost:4000'));
     startController('Headline', Headline);
     startController('Search', Search);
     startController('Results', Results);
