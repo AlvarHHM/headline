@@ -1,5 +1,5 @@
 define(['Palace'], function(Palace) {
-  return function(){
+  return function(view){
 
 
     //+ getResults :: String -> Promise([Headline
@@ -8,7 +8,7 @@ define(['Palace'], function(Palace) {
     //+ makeResults :: [Headline] -> AddView(HTML)
       , makeResults = compose(
           updateHtml('#trending')
-        , render_('Trending')
+        , view
         , setVals({headlines: id}))
 
     //+ init :: {} -> EventStream(AddView(Table))

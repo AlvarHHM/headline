@@ -1,6 +1,6 @@
 <div>
   <h3>Trending Insights</h3>
-	<ul id="trending_list">
+	<ul>
     {{#headlines}}
       <li>{{title}}</li>
     {{/headlines}}

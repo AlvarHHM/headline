@@ -21,10 +21,14 @@ require.config( {
 	  , Socket: '/javascripts/src/app/lib/Socket'
 	  , Http: '/javascripts/src/app/lib/Http'
 	  , Repo: '/javascripts/src/app/lib/Repo'
+	  , HighCharts: '/javascripts/vendor/highcharts/highcharts'
 	},
     shim: {
         	'Handlebars': {
             exports: 'Handlebars'
+        	}
+				, 'HighCharts': {
+						exports: 'Highcharts'
         	}
 				, 'EventStreams': {
 						deps: ['FlapJax', 'functor', 'Monad']

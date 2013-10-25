@@ -3,9 +3,8 @@ define(['Palace'], function(Palace) {
     //+ tellOthers :: Event -> Event
     var tellOthers = function(e){
       e.preventDefault();
-      return emit('submit', 'Search', {term: $('#term').val()} )
+      return emit('submit', 'Search', {term: $('#term').val()});
     }
-    fmap(tellOthers, on('click', '#searched'));
     fmap(tellOthers, on('submit', '#search-form'));
   };
 });

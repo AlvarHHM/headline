@@ -1,0 +1,7 @@
+- Bower Power
+- AMD simpler main.js (use less paths, remove last few shims)
+
+Palace
+- allow new rendering engine
+- possibly remove eventbus in favor of actual FRP
+- start controller not really doing much for us

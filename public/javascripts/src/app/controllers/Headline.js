@@ -1,10 +1,9 @@
 define(['Palace'], function(Palace) {
-  return function(){
-    Palace.expose();
+  return function(view){
+    view = view({});
 
-    var view = render_('Headline', {})
     //+ updateTitle :: Headline -> Html
-      , updateTitle =  compose(html('#title', view), pluck('title'))
+    var updateTitle =  compose(html('#title', view), pluck('title'))
     //+ populateScroller :: Html -> Headline -> Html
       , populateScroller = function(view, headline) {
           var images = mconcat(
@@ -13,10 +12,8 @@ define(['Palace'], function(Palace) {
           return html('#sliderContent', view, images);
         }
     //+ populatePage :: Headline -> Html
-      , populatePage = S(populateScroller, updateTitle)
-    //+ getHeadline :: _ -> {title: String}
-      , getHeadline = K({title: "My Title", images: ['images/demo/field.jpg', 'images/demo/gnome.jpg', 'images/demo/pencils.jpg', 'images/demo/golf.jpg']})
-
+      , populatePage = liftA2(populateScroller, updateTitle, I)
+    //+ addListeners :: IO
       , addListeners = function() {
             $('.iosSlider').iosSlider({
               desktopClickDrag: true
