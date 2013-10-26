@@ -9,10 +9,10 @@ define([
   , NewInsights
   , LiveActivity
 ) {
-  return function(view) {
+  return function(view, socket) {
     updateHtml('#main', view({}));
     startController('Trending', Trending);
     startController('NewInsights', NewInsights);
-    startController('LiveActivity', LiveActivity);
+    LiveActivity(render_('LiveActivity'), socket);
   }
 });

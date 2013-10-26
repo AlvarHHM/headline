@@ -1,5 +1,5 @@
 define(['Palace'], function(Palace) {
-  return function(view){
+  return function(view, socket){
 
     //+ prependList :: Html -> IO
     var prependList = function(item) {
@@ -13,7 +13,7 @@ define(['Palace'], function(Palace) {
       , init = compose(updateHtml("#live_activity"), view)
       ;
 
-    fmap(addResult, on('activity', 'socket'))
+    fmap(addResult, socket.on('activity'))
     init({});
   };
 });

@@ -1,5 +1,5 @@
 define(['Palace'], function(Palace) {
-  return function(view){
+  return function(view, hl_stream, search_stream){
     view = view({});
 
     //+ updateTitle :: Headline -> Html
@@ -22,8 +22,13 @@ define(['Palace'], function(Palace) {
 
     //+ init :: E -> IO()
       , init = compose(addListeners, updateHtml('#main'), populatePage)
+
+      , search = function(e) {
+        search_stream.sendEvent($(e.currentTarget).text())
+      }
       ;
 
-    fmap(init, on('render', 'Headline'))
+    fmap(search, on('click', '#title'))
+    fmap(init, hl_stream);
   };
 });

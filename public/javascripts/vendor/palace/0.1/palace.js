@@ -302,7 +302,8 @@ define(['require', 'FunctionalJS', 'PreludeJS','functor','EventStreams', 'Applic
         return $(el)[0];
       }.autoCurry()
     , on = function(event_name, channel_name_or_css_selector) {
-        return addUIOrEventListener(event_name, channel_name_or_css_selector)
+        return addUIListener(event_name, channel_name_or_css_selector);
+        // return addUIOrEventListener(event_name, channel_name_or_css_selector)
       }.autoCurry()
     , updateHtml = function(selector, html) {
         return placeOnScreen({selector: selector, html: html})
