@@ -1,5 +1,5 @@
 define(['Palace'], function(Palace) {
-  return function(view){
+  return function(view, search_stream) {
     var results = [];
     Palace.expose();
     //+ populateTable :: [Result] -> Table
@@ -15,21 +15,21 @@ define(['Palace'], function(Palace) {
       , makeResults = compose(updateHtml('#main'), populateTable, cacheResults)
 
     //+ init :: {term: String} -> EventStream(AddView(Table))
-      , init = compose(fmap(makeResults), getResults, pluck('term'))
+      , init = compose(fmap(makeResults), getResults) 
 
     //+ retrieveResult :: Id -> Result
       , retrieveResult = function(id) {
         return detectBy(pluck('id'), id, results);
       }
+    //+ showHeadline :: ClickEvent -> Headline
       , showHeadline = compose(
-            emit('render', 'Headline')
-          , retrieveResult
+            retrieveResult
           , pluck('id')
           , pluck('currentTarget')
         )
       ;
 
-    fmap(init, on('submit', 'Search'))
-    fmap(showHeadline, on('click', '.row'))
+    fmap(init, search_stream);
+    return fmap(showHeadline, on('click', '.row')); //+ :: Stream(Headline)
   };
 });
