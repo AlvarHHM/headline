@@ -31,11 +31,11 @@ define(['functor'], function() {
       }
   });
 
-  Applicative(Array, {
-    pure: Array, // needs to be infinite to be correct ziplist
-    ap: function(a2) {
-      // ziplist implementation
-      return map(function(f,i){ return f(a2[i]); }, this);
-    }
-  });
+  // Applicative(Array, {
+  //   pure: Array, // needs to be infinite to be correct ziplist
+  //   ap: function(a2) {
+  //     // ziplist implementation
+  //     return map(function(f,i){ return f(a2[i]); }, this);
+  //   }
+  // });
 });
