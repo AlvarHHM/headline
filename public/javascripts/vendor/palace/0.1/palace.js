@@ -2,7 +2,7 @@
 //+ EventData = {}
 //+ ChannelName = String
 //+ @deftype Channel = {id: String, on: (EventName -> ChannelName -> EventStream), emit: -> (EventName -> ChannelName -> {} -> EventStream)}
-define(['require', 'FunctionalJS', 'PreludeJS','functor','EventStreams', 'typeclasses'], function(require) {
+define(['require', 'FunctionalJS', 'PreludeJS', 'typeclasses'], function(require) {
   var tc = require('typeclasses');
   var fmap = tc.fmap;
   var Palace = {};
@@ -10,6 +10,27 @@ define(['require', 'FunctionalJS', 'PreludeJS','functor','EventStreams', 'typecl
   var CHANNEL_REGISTRY = {};
   var GLOBAL = (typeof global == "object") ? global : window;
   var TEMPLATE_PATH = '/javascripts/src/app/templates/';
+
+  tc.Functor(EventStream, {
+    fmap: function(f) {
+      return this.mapE(f);
+    }
+  });
+
+  tc.Monad(EventStream, {
+    mjoin: function() {
+      // propagatePulse(new Pulse(nextStamp(), value),node);
+      // var val = this.updater([10])
+      // console.log("val")
+      // console.log(val)
+      // new EventStream([this], K(val))
+      var val = null;
+      this.mapE(function(e){
+        val = e
+      });
+      return val;
+    }
+  });
 
   // TEMPLATING
   // ====================================================

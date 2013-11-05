@@ -17,7 +17,6 @@ require.config( {
   , Repo: '/javascripts/src/app/lib/Repo'
   , HighCharts: '/javascripts/vendor/highcharts/highcharts'
   , typeclasses: '/vendor/typeclasses/amd/index'
-  , EventStreams: '/javascripts/vendor/typeclasses/eventstreams'
   , lodash: '/vendor/lodash/dist/lodash'
   },
         shim: {
