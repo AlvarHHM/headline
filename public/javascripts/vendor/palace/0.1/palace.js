@@ -2,7 +2,9 @@
 //+ EventData = {}
 //+ ChannelName = String
 //+ @deftype Channel = {id: String, on: (EventName -> ChannelName -> EventStream), emit: -> (EventName -> ChannelName -> {} -> EventStream)}
-define(['require', 'FunctionalJS', 'PreludeJS','functor','EventStreams', 'Applicative'], function(require) {
+define(['require', 'FunctionalJS', 'PreludeJS','functor','EventStreams', 'typeclasses'], function(require) {
+  var tc = require('typeclasses');
+  var fmap = tc.fmap;
   var Palace = {};
   var LISTENERS = {};
   var CHANNEL_REGISTRY = {};

@@ -1,12 +1,12 @@
-
-(function() {
-  Functor(EventStream, {
+define(['typeclasses'],
+function(tc) {
+  tc.Functor(EventStream, {
     fmap: function(f) {
       return this.mapE(f);
     }
-  });  
+  });
 
-  Monad(EventStream, {
+  tc.Monad(EventStream, {
     mjoin: function() {
       // propagatePulse(new Pulse(nextStamp(), value),node);
       // var val = this.updater([10])
@@ -19,5 +19,5 @@
       });
       return val;
     }
-  });  
-})()
+  });
+});
