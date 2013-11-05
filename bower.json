@@ -1,0 +1,17 @@
+{
+  "name": "headline",
+  "version": "0.0.0",
+  "homepage": "https://github.com/DrBoolean/headline",
+  "private": true,
+  "dependencies": {
+    "typeclasses": "git+https://github.com/adambaker/typeclasses.git#master",
+    "lodash": "~2.2.1"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

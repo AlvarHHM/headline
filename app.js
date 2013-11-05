@@ -62,7 +62,8 @@ app.configure(function(){
   app.set('views', __dirname + '/views');
   app.set('view engine', 'ejs');
   app.set("json callback", true);
-	app.use(express.static(__dirname + '/public'));
+  app.use(express.static(__dirname + '/public'));
+  app.use('/vendor', express.static(__dirname + '/bower_components'));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(app.router);
@@ -79,20 +80,20 @@ app.configure('production', function(){
 });
 
 io.sockets.on('connection', function (socket) {
-	// socket.on('activity', function(e) {
-	// 	console.log("--------activity!----------", e);
-	// 	socket.emit("activity", e);
-	// });
+  // socket.on('activity', function(e) {
+  // console.log("--------activity!----------", e);
+  // socket.emit("activity", e);
+  // });
 
-	socket.on("activity#add", function(e) {
-		console.log("--------activity add!----------", e);
-		activities.push(e.activity);
-		socket.emit("activity", {msg: e.activity, id: (activities.length-1) });
-	});
+  socket.on("activity#add", function(e) {
+    console.log("--------activity add!----------", e);
+    activities.push(e.activity);
+    socket.emit("activity", {msg: e.activity, id: (activities.length-1) });
+  });
 });
 
-if (!module.parent) {	
-	var port = process.env.PORT || 4000;
+if (!module.parent) {
+  var port = process.env.PORT || 4000;
   app.listen(port);
-	console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
+  console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
 }
