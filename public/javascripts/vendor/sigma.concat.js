@@ -1259,6 +1259,7 @@ function MouseCaptor(dom) {
    * @return {number} The wheel delta of the mouse.
    */
   function getDelta(e) {
+    console.log('getDelta', e.wheelDelta)
     return e.wheelDelta != undefined && e.wheelDelta ||
            e.detail != undefined && -e.detail;
   };
@@ -1566,6 +1567,24 @@ function MouseCaptor(dom) {
   
   document.addEventListener('touchend', upHandler, true);
   document.addEventListener('mouseup', upHandler, true);
+
+  document.addEventListener('gestureend', function(e) {
+    if (e.scale < 1.0) {
+        e.wheelDelta = -(e.scale*10);
+    } else if (e.scale > 1.0) {
+        e.wheelDelta = e.scale*10;
+    }
+    wheelHandler(e);
+  }, false);
+
+    document.addEventListener('gesturestart', function(e) {
+      if (e.scale < 1.0) {
+          e.wheelDelta = -(e.scale*10);
+      } else if (e.scale > 1.0) {
+          e.wheelDelta = e.scale*10;
+      }
+      wheelHandler(e);
+  }, false);
 
   this.checkBorders = checkBorders;
   this.interpolate = startInterpolate;
