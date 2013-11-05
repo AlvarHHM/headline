@@ -1235,13 +1235,9 @@ function MouseCaptor(dom) {
    * @return {number} The local X value of the mouse.
    */
   function getX(e) {
-    console.log('get x from', e);
-    var x = e.offsetX != undefined && e.offsetX ||
+    return e.offsetX != undefined && e.offsetX ||
            e.layerX != undefined && e.layerX ||
            e.clientX != undefined && e.clientX;
-
-    console.log('x is', x);
-    return x;
   };
 
   /**
@@ -1275,7 +1271,6 @@ function MouseCaptor(dom) {
    * @param  {event} event A 'move' mouse event.
    */
   function moveHandler(event) {
-    console.log('moveHandler', event);
     oldMouseX = self.mouseX;
     oldMouseY = self.mouseY;
 
@@ -1298,7 +1293,6 @@ function MouseCaptor(dom) {
    * @param  {event} event A 'up' mouse event.
    */
   function upHandler(event) {
-    // console.log("upHandler", event);
     if (self.p.mouseEnabled && self.isMouseDown) {
       self.isMouseDown = false;
       self.dispatch('mouseup');
@@ -1320,9 +1314,6 @@ function MouseCaptor(dom) {
    * @param  {event} event A 'down' mouse event.
    */
   function downHandler(event) {
-    console.log("downHandler", event);
-    // console.log("self.p.mouseEnabled", self.p.mouseEnabled);
-    // console.log("self", self);
     if (self.p.mouseEnabled) {
       self.isMouseDown = true;
       oldMouseX = self.mouseX;
@@ -1371,7 +1362,6 @@ function MouseCaptor(dom) {
    * triggered.
    */
   function startDrag() {
-    console.log('startdrag', self);
     oldStageX = self.stageX;
     oldStageY = self.stageY;
     startX = self.mouseX;
@@ -1404,7 +1394,6 @@ function MouseCaptor(dom) {
   function drag() {
     var newStageX = self.mouseX - startX + oldStageX;
     var newStageY = self.mouseY - startY + oldStageY;
-    console.log('newStageX', newStageX, 'newStageY', newStageY);
 
     if (newStageX != self.stageX || newStageY != self.stageY) {
       lastStageX2 = lastStageX;
