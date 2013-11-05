@@ -1235,9 +1235,13 @@ function MouseCaptor(dom) {
    * @return {number} The local X value of the mouse.
    */
   function getX(e) {
-    return e.offsetX != undefined && e.offsetX ||
+    console.log('get x from', e);
+    var x = e.offsetX != undefined && e.offsetX ||
            e.layerX != undefined && e.layerX ||
            e.clientX != undefined && e.clientX;
+
+    console.log('x is', x);
+    return x;
   };
 
   /**
@@ -1271,13 +1275,13 @@ function MouseCaptor(dom) {
    * @param  {event} event A 'move' mouse event.
    */
   function moveHandler(event) {
+    console.log('moveHandler', event);
     oldMouseX = self.mouseX;
     oldMouseY = self.mouseY;
 
     self.mouseX = getX(event);
     self.mouseY = getY(event);
-    var shouldDrag = event.type.match(/touch/i) || self.isMouseDown;
-    shouldDrag && drag(event);
+    self.isMouseDown && drag(event);
     self.dispatch('move');
 
     if (event.preventDefault) {
@@ -1320,7 +1324,6 @@ function MouseCaptor(dom) {
     // console.log("self.p.mouseEnabled", self.p.mouseEnabled);
     // console.log("self", self);
     if (self.p.mouseEnabled) {
-      console.log("mouse is enabled!");
       self.isMouseDown = true;
       oldMouseX = self.mouseX;
       oldMouseY = self.mouseY;
@@ -1564,30 +1567,16 @@ function MouseCaptor(dom) {
   dom.addEventListener('mousewheel', wheelHandler, true);
   dom.addEventListener('mousemove', moveHandler, true);
   dom.addEventListener('mousedown', downHandler, true);
-  // dom.addEventListener('touchstart', function(e) {
-  //   // console.log("GOT A TOUCHMOVE", e);
-  //   return self.even
-  // }, true);
-  dom.addEventListener('touchmove', function(e) {
-    // console.log("GOT A TOUCHMOVE", e);
-    return moveHandler(e)
-  }, false);
+
+  dom.addEventListener('touchstart', function(e) {
+    moveHandler(e);
+    downHandler(e);
+  }, true);
   
-  // document.addEventListener('touchend', function(e) {
-  //   // console.log("GOT A TOUCHMOVE", e);
-  //   return upHandler(e)
-  // }, true);
-
-  // jQuery(document.body).on('touchmove', function(e) {
-  //   console.log("GOT A TOUCHMOVE", e);
-  //   return moveHandler(e)
-  // }, false);
-  // jQuery('#sigma_mouse_1').on('touchend', function(e) {
-  //   console.log("GOT A TOUCHEND", e);
-  //   return upHandler(e);
-  // });
+  dom.addEventListener('touchmove', moveHandler, false);
+  
+  document.addEventListener('touchend', upHandler, true);
   document.addEventListener('mouseup', upHandler, true);
-
 
   this.checkBorders = checkBorders;
   this.interpolate = startInterpolate;

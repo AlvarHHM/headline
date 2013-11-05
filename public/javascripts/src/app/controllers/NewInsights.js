@@ -1,13 +1,41 @@
 define(['Palace', 'HighCharts'], function(Palace) {
   return function(view){
 
+    var sigInst = null
+      , hidden = false
+
+      , hidePaths = function(event){
+        var nodes = event.content;
+        var neighbors = {};
+        sigInst.iterEdges(function(e){
+          if(nodes.indexOf(e.source)>=0 || nodes.indexOf(e.target)>=0){
+            neighbors[e.source] = 1;
+            neighbors[e.target] = 1;
+          }
+        }).iterNodes(function(n){
+          if(!neighbors[n.id]){
+            n.hidden = 1;
+          }else{
+            n.hidden = 0;
+          }
+        }).draw(2,2,2);
+      }
+
+    , showAllPaths = function() {
+        return sigInst.iterEdges(function(e){
+                e.hidden = 0;
+              }).iterNodes(function(n){
+                n.hidden = 0;
+              }).draw(2,2,2);
+      }
+
 
     //+ getResults :: _ -> Promise(Data)
-    var getResults = compose(Http.get('/newInsightData'), K({}))
+      , getResults = compose(Http.get('/newInsightData'), K({}))
 
       , fillChart = function(data) {
           var sigRoot = $('#sig')[0];
-          var sigInst = sigma.init(sigRoot).drawingProperties({
+          sigInst = sigma.init(sigRoot).drawingProperties({
             defaultLabelColor: '#ccc',
             font: 'Arial',
             edgeColor: 'source',
@@ -41,29 +69,10 @@ define(['Palace', 'HighCharts'], function(Palace) {
           .addEdge('tacos','hello','blah')
           .draw();
 
-         sigInst.bind('downnodes',function(event){
-            var nodes = event.content;
-            console.log(nodes)
-            var neighbors = {};
-            sigInst.iterEdges(function(e){
-              if(nodes.indexOf(e.source)>=0 || nodes.indexOf(e.target)>=0){
-                neighbors[e.source] = 1;
-                neighbors[e.target] = 1;
-              }
-            }).iterNodes(function(n){
-              if(!neighbors[n.id]){
-                n.hidden = 1;
-              }else{
-                n.hidden = 0;
-              }
-            }).draw(2,2,2);
-          }).bind('outnodes',function(){
-            sigInst.iterEdges(function(e){
-              e.hidden = 0;
-            }).iterNodes(function(n){
-              n.hidden = 0;
-            }).draw(2,2,2);
-          });
+         sigInst.bind('downnodes', function(e) {
+          hidden ? hidePaths(e) : showAllPaths(e);
+          hidden = !hidden;
+         });
       }
 
     //+ makePage :: 
