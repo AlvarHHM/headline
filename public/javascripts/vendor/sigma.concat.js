@@ -1259,7 +1259,6 @@ function MouseCaptor(dom) {
    * @return {number} The wheel delta of the mouse.
    */
   function getDelta(e) {
-    console.log('getDelta', e.wheelDelta)
     return e.wheelDelta != undefined && e.wheelDelta ||
            e.detail != undefined && -e.detail;
   };

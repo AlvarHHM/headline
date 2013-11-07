@@ -45,29 +45,9 @@ define(['Palace', 'HighCharts'], function(Palace) {
              maxNodeSize: 5
           });
 
-          sigInst.addNode('hello',{
-            label: 'Hello',
-            color: '#ff0000',
-            x: Math.floor(Math.random()*100),
-            y: Math.floor(Math.random()*100)
-          })
-          .addNode('world',{
-            label: 'World !',
-            color: '#00ff00',
-            x: Math.floor(Math.random()*100),
-            y: Math.floor(Math.random()*100)
-          })
-          .addNode('blah',{
-            label: 'blah',
-            color: '#00ff00',
-            x: Math.floor(Math.random()*100),
-            y: Math.floor(Math.random()*100)
-          })
-          .addEdge('hello_world','hello','world')
-          .addEdge('hello_world1','hello','world')
-          .addEdge('hello_world2','hello','world')
-          .addEdge('tacos','hello','blah')
-          .draw();
+          sigInst.parseGexf('/gexf');
+          // Draw the graph :
+          sigInst.draw();
 
          sigInst.bind('downnodes', function(e) {
           hidden ? hidePaths(e) : showAllPaths(e);

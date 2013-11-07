@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gexf>
+  <graph mode="static" defaultedgetype="directed">
+    <nodes>
+      <node id="0" label="undefined"/>
+      <node id="1" label="Darth Vader"/>
+      <node id="2" label="Women"/>
+      <node id="3" label="Makeup"/>
+      <node id="4" label="Crayons"/>
+    </nodes>
+    <edges>
+      <edge id="0" source="2" target="3"/>
+      <edge id="1" source="1" target="4"/>
+    </edges>
+  </graph>
+</gexf>

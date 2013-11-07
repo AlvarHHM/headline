@@ -16,8 +16,8 @@ require.config( {
   , Http: '/javascripts/src/app/lib/Http'
   , Repo: '/javascripts/src/app/lib/Repo'
   , HighCharts: '/javascripts/vendor/highcharts/highcharts'
-  , typeclasses: '/vendor/typeclasses/amd/index'
-  , lodash: '/vendor/lodash/dist/lodash'
+  , typeclasses: '/javascripts/vendor/typeclasses/amd/index'
+  , lodash: '/javascripts/vendor/lodash/1.3.3/lodash'
   },
         shim: {
           'Handlebars': {
