@@ -1,4 +1,6 @@
-var Http = (function() {
+define([
+  'Palace'
+], function(Palace) {
   var handler = function(client, resultE){
         return function() {
           if (client.readyState==4) {
@@ -49,28 +51,4 @@ var Http = (function() {
       }.autoCurry()
 
   return {get: get, put: put, post: post, destroy: destroy}
-})();
-
-
-
-var makeRequest = function(url, params) {
-  var promise = new Promise();
-  var request = new XMLHttpRequest();
-  request.onreadystatechange = function() {
-    if (request.readyState==4) {
-      var eitherResponse = Either.partial(Error(request));
-      if(xhr.status == 200) {
-        promise.resolve(eitherResponse(JSON.parse(request.responseText)));
-      } else {
-        promise.resolve(eitherResponse(null));
-      }
-    }
-  }
-  request.onerror = function() {
-    promise.resolve(Either(Error(request), null));
-  }
-  request.open("GET", url);
-  request.send();
-  return promise;
-}.autoCurry();
-
+});

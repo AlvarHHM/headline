@@ -1,23 +1,17 @@
 require.config( {
-  paths : {
-    Handlebars: '/javascripts/vendor/handlebars/1.0.5/handlebars'
-  , text: '/javascripts/vendor/require/plugins/text'
-  , Palace:  '/javascripts/vendor/palace/0.1/palace'
-  , FlapJax: '/javascripts/vendor/flapjax'
-  , FunctionalJS: '/javascripts/vendor/FunctionalJS/functional'
-  , PreludeJS: '/javascripts/vendor/PreludeJS/prelude'
-  , App: '/javascripts/src/app/controllers/App'
-  , Search: '/javascripts/src/app/controllers/Search'
-  , Headline: '/javascripts/src/app/controllers/Headline'
-  , Results: '/javascripts/src/app/controllers/Results'
-  , Dashboard: '/javascripts/src/app/controllers/Dashboard'
-  , Trending: '/javascripts/src/app/controllers/Trending'
-  , Socket: '/javascripts/src/app/lib/Socket'
-  , Http: '/javascripts/src/app/lib/Http'
-  , Repo: '/javascripts/src/app/lib/Repo'
-  , HighCharts: '/javascripts/vendor/highcharts/highcharts'
-  , typeclasses: '/javascripts/vendor/typeclasses/amd/index'
-  , lodash: '/javascripts/vendor/lodash/1.3.3/lodash'
+    baseUrl: '/javascripts'
+  , paths : {
+      Handlebars: 'vendor/handlebars/1.0.5/handlebars'
+    , text: 'vendor/require/plugins/text'
+    , Palace:  'vendor/palace/0.1/palace'
+    , FlapJax: 'vendor/flapjax'
+    , FunctionalJS: 'vendor/FunctionalJS/functional'
+    , PreludeJS: 'vendor/PreludeJS/prelude'
+    , Socket: 'src/app/lib/Socket'
+    , Http: 'src/app/lib/Http'
+    , HighCharts: 'vendor/highcharts/highcharts'
+    , typeclasses: 'vendor/typeclasses/amd/index'
+    , lodash: 'vendor/lodash/1.3.3/lodash'
   },
         shim: {
           'Handlebars': {
@@ -26,25 +20,13 @@ require.config( {
           , 'HighCharts': {
             exports: 'Highcharts'
           }
-          , 'Socket' : {
-            deps: ['Palace']
-              , exports: 'Socket'
-          }
-          , 'Http' : {
-            deps: ['Palace']
-              , exports: 'Http'
-          }
-          , 'Repo': {
-            deps: ['Http', 'Socket']
-              , exports: 'Repo'
-          }
         }
 });
 
-require({baseUrl: "/javascripts/src/" },
+require(
 [
 'require'
-, 'App'
+, 'src/app/controllers/App'
 , 'lodash'
 , 'typeclasses'
 , 'FunctionalJS'

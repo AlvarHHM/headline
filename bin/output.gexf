@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gexf xmlns="http://www.gexf.net/1.2draft" version="1.2" xmlns:viz="http://www.gexf.net/1.2draft/viz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd">
-  <meta lastmodifieddate="2013-11-07">
+  <meta lastmodifieddate="2013-11-11">
     <creator>Gephi 0.8.1</creator>
     <description></description>
   </meta>
@@ -24,7 +24,7 @@
           <attvalue for="betweenesscentrality" value="0.0"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="-3.7264087" y="45.980404" z="0.0"></viz:position>
+        <viz:position x="-22.177872" y="-40.45033" z="0.0"></viz:position>
         <viz:color r="254" g="240" b="217"></viz:color>
       </node>
       <node id="1" label="Darth Vader">
@@ -34,7 +34,7 @@
           <attvalue for="betweenesscentrality" value="0.0"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="-44.95065" y="-27.968124" z="0.0"></viz:position>
+        <viz:position x="46.83907" y="-27.02644" z="0.0"></viz:position>
         <viz:color r="179" g="0" b="0"></viz:color>
       </node>
       <node id="2" label="Women">
@@ -44,7 +44,7 @@
           <attvalue for="betweenesscentrality" value="0.0"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="48.881973" y="-20.289482" z="0.0"></viz:position>
+        <viz:position x="-47.97381" y="24.956997" z="0.0"></viz:position>
         <viz:color r="179" g="0" b="0"></viz:color>
       </node>
       <node id="3" label="Makeup">
@@ -54,7 +54,7 @@
           <attvalue for="betweenesscentrality" value="0.0"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="53.777798" y="5.4678535" z="0.0"></viz:position>
+        <viz:position x="-29.611118" y="43.8855" z="0.0"></viz:position>
         <viz:color r="179" g="0" b="0"></viz:color>
       </node>
       <node id="4" label="Crayons">
@@ -64,7 +64,7 @@
           <attvalue for="betweenesscentrality" value="0.0"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="-53.982574" y="-3.1911192" z="0.0"></viz:position>
+        <viz:position x="52.923527" y="-1.3660415" z="0.0"></viz:position>
         <viz:color r="179" g="0" b="0"></viz:color>
       </node>
     </nodes>

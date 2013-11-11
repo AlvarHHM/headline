@@ -1,4 +1,6 @@
-var Socket = (function(){
+define([
+  'Palace'
+], function(Palace) {
   var create = function(host) {
     var socket = io.connect(host)
 
@@ -18,4 +20,4 @@ var Socket = (function(){
 
 
   return {create: create}
-})();
+});

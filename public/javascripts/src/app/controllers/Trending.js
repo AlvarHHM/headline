@@ -1,4 +1,7 @@
-define(['Palace'], function(Palace) {
+define([
+  'Palace'
+, 'Http'
+], function(Palace, Http) {
   return function(view){
 
 

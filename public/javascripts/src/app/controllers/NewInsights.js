@@ -1,4 +1,7 @@
-define(['Palace', 'HighCharts'], function(Palace) {
+define([
+  'Palace'
+, 'HighCharts'
+], function(Palace) {
   return function(view){
 
     var sigInst = null
@@ -29,10 +32,6 @@ define(['Palace', 'HighCharts'], function(Palace) {
               }).draw(2,2,2);
       }
 
-
-    //+ getResults :: _ -> Promise(Data)
-      , getResults = compose(Http.get('/newInsightData'), K({}))
-
       , fillChart = function(data) {
           var sigRoot = $('#sig')[0];
           sigInst = sigma.init(sigRoot).drawingProperties({
@@ -45,7 +44,7 @@ define(['Palace', 'HighCharts'], function(Palace) {
              maxNodeSize: 5
           });
 
-          sigInst.parseGexf('/gexf');
+          sigInst.parseGexf('/output.gexf');
           // Draw the graph :
           sigInst.draw();
 
@@ -55,13 +54,13 @@ define(['Palace', 'HighCharts'], function(Palace) {
          });
       }
 
-    //+ makePage :: 
+    //+ makePage :: Html
       , makePage = compose(updateHtml('#new_insights'), view)
 
     //+ init :: {} -> EventStream(AddView(Table))
-      , init = compose(fmap(fillChart), getResults, makePage)
+      , init = compose(fillChart, makePage)
       ;
 
-    init({});
+    init();
   };
 });

@@ -1,11 +1,10 @@
 define([
   'Palace'
-, 'Search'
-, 'Results'
-, 'Headline'
-, 'Dashboard'
+, 'src/app/controllers/Search'
+, 'src/app/controllers/Results'
+, 'src/app/controllers/Headline'
+, 'src/app/controllers/Dashboard'
 , 'Socket'
-, 'Repo'
 ], function(
     Palace
   , Search

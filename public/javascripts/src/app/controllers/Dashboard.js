@@ -1,8 +1,8 @@
 define([
   'Palace'
-, 'Trending'
-, 'app/controllers/NewInsights'
-, 'app/controllers/LiveActivity'
+, 'src/app/controllers/Trending'
+, 'src/app/controllers/NewInsights'
+, 'src/app/controllers/LiveActivity'
 ], function(
     Palace
   , Trending
