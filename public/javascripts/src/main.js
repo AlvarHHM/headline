@@ -5,6 +5,7 @@ require.config( {
     , text: 'vendor/require/plugins/text'
     , Palace:  'vendor/palace/0.1/palace'
     , FlapJax: 'vendor/flapjax'
+    , Bacon: 'vendor/bacon/dist/Bacon'
     , FunctionalJS: 'vendor/FunctionalJS/functional'
     , PreludeJS: 'vendor/PreludeJS/prelude'
     , Socket: 'src/app/lib/Socket'
