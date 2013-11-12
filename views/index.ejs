@@ -39,15 +39,13 @@
           <label for="name">Name</label>
           <input id="name" size="30" type="text" name="attrs[name]">
           <label for="type">Type</label>
-          <input id="type" size="30" type="text" name="attrs[type]">
+          <input id="type" size="30" type="text" name="attrs[type]" value="Insight">
           <div class="submit"><input name="commit" type="submit" value="Create Node" /></div>
         </form>
 
         <form id='rel-form' accept-charset="UTF-8" action="/add_connection" id="connection" method="post">
           <label for="type">Type</label>
-          <input id="type" size="30" type="text" name="type">
-          <label for="name">Name</label>
-          <input id="name" size="30" type="text" name="attrs[name]">
+          <input id="type" size="30" type="text" name="type" value="Similar">
           <select multiple name="nodes" style="width:100%">
           	<% for(i in lines) { %>
             <option value="<%= lines[i].id %>"><%= lines[i].data.name %></option>
@@ -60,7 +58,7 @@
         <div id="main">
           <ul>
           <% for(i in relationships) { %>
-            <li><%= relationships[i].data.name %></li>
+          <li><%= relationships[i].start %> - <%= relationships[i].end %></li>
           <% } %>
           </ul>
         </div>
