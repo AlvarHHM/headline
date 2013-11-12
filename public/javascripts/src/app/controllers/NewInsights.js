@@ -35,8 +35,11 @@ define([
               }).draw(2,2,2);
       }
 
-      , fillChart = function(data) {
-          var sigRoot = $('#sig')[0];
+      , fillChart = function(file_name) {
+          file_name = file_name || "output";
+          var $sig = $('#sig');
+          $sig.html('');
+          var sigRoot = $sig[0];
           sigInst = sigma.init(sigRoot).drawingProperties({
             defaultLabelColor: '#ccc',
             font: 'Arial',
@@ -46,7 +49,8 @@ define([
              minNodeSize: 0.5,
              maxNodeSize: 5
           });
-          var file_name = (window.location.hash && window.location.hash.split("#")[1]) || "output";
+          console.log('file_name', file_name);
+          //var file_name = (window.location.hash && window.location.hash.split("#")[1]) || "output";
           sigInst.parseGexf('/'+file_name+'.gexf');
           // Draw the graph :
           sigInst.draw();
@@ -57,11 +61,20 @@ define([
          });
       }
 
+    //+ addListeners :: UI()
+      , addListeners = function() {
+        $('#button_box a').click(function(e) {
+          e.preventDefault();
+          //window.location.hash = this.href;
+          fillChart($(this).data('chart'));
+        });
+      }
+
     //+ makePage :: Html
       , makePage = compose(updateHtml('#new_insights'), view)
 
     //+ init :: {} -> EventStream(AddView(Table))
-      , init = compose(fillChart, makePage)
+      , init = compose(addListeners, fillChart, makePage)
       ;
 
     init();
