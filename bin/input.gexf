@@ -2,15 +2,63 @@
 <gexf>
   <graph mode="static" defaultedgetype="directed">
     <nodes>
-      <node id="0" label="undefined"/>
-      <node id="1" label="Darth Vader"/>
-      <node id="2" label="Women"/>
-      <node id="3" label="Makeup"/>
-      <node id="4" label="Crayons"/>
+      <node id="5" label="Smoking is a blessing and a curse – some love it and some hate it but most are challenged to stop it."/>
+      <node id="6" label="Motivation levels are variable and complex. Successful changers are internally motivated, not doing it for others, but for themselves. Often consumers struggle to discover that intrinsic trigger or motivator"/>
+      <node id="7" label="Embarking on a significant behavior change is scary on two levels. First,  one is changing “WHO” they are and not liking the new person they become. Second,  the possibility of failure is real and daunting"/>
+      <node id="8" label="Consumers manage multiple priorities in life. Environmental stressors  may hinder the quest for behavior change"/>
+      <node id="9" label="Consumers, even those with chronic or serious illness, believe they are invincible"/>
+      <node id="10" label="People believe they know what to do for their health and what works for their bodies"/>
+      <node id="11" label="I was a sexy, plus size Diva.  Who am I now?"/>
+      <node id="12" label="It was only a matter of time"/>
+      <node id="13" label="Becoming a better man"/>
+      <node id="14" label="I want to be more green"/>
+      <node id="15" label="Performance is a key need for men. They will not trade performance for other benefits."/>
+      <node id="16" label="Consumers tend to shift to the use of green/environmental cleaning products when they have children."/>
+      <node id="27147" label="As compared to smoking, fewer societal pressures regarding other wellness behaviors."/>
+      <node id="27148" label="I decided to have bypass surgery."/>
+      <node id="27149" label="I am close to 50, but in my mind I am still 26."/>
+      <node id="27150" label="Many family members are diabetic."/>
+      <node id="27151" label="I did not go to the doctor. Only “old people” do that!"/>
+      <node id="27152" label="I have changed eating habits before too."/>
+      <node id="27153" label="I was always been a bigger person."/>
+      <node id="27154" label="I was always an upbeat kind of person"/>
+      <node id="27155" label="In the middle of this journey there were ups and downs."/>
+      <node id="27156" label="My wife is skinny. She eats what she wants."/>
+      <node id="27157" label="after my wedding I decided to go all out on my own. "/>
+      <node id="27158" label="Deep down I want to make sure I am not like my Dad"/>
+      <node id="27159" label="Now, my physical and mental health are better"/>
     </nodes>
     <edges>
-      <edge id="0" source="2" target="3"/>
-      <edge id="1" source="1" target="4"/>
+      <edge id="2" source="5" target="7"/>
+      <edge id="3" source="5" target="8"/>
+      <edge id="4" source="5" target="9"/>
+      <edge id="5" source="5" target="10"/>
+      <edge id="6" source="8" target="11"/>
+      <edge id="7" source="9" target="11"/>
+      <edge id="8" source="10" target="11"/>
+      <edge id="9" source="6" target="11"/>
+      <edge id="10" source="7" target="12"/>
+      <edge id="11" source="8" target="12"/>
+      <edge id="12" source="10" target="12"/>
+      <edge id="13" source="7" target="13"/>
+      <edge id="14" source="8" target="13"/>
+      <edge id="15" source="10" target="13"/>
+      <edge id="16" source="14" target="15"/>
+      <edge id="17" source="7" target="14"/>
+      <edge id="18" source="14" target="16"/>
+      <edge id="326647" source="27147" target="5"/>
+      <edge id="326648" source="27148" target="11"/>
+      <edge id="326649" source="27149" target="12"/>
+      <edge id="326650" source="27150" target="12"/>
+      <edge id="326651" source="27151" target="12"/>
+      <edge id="326652" source="27152" target="12"/>
+      <edge id="326653" source="27153" target="13"/>
+      <edge id="326654" source="27154" target="13"/>
+      <edge id="326656" source="27156" target="13"/>
+      <edge id="326657" source="27157" target="13"/>
+      <edge id="326658" source="27158" target="13"/>
+      <edge id="326659" source="27159" target="13"/>
+      <edge id="326660" source="27155" target="13"/>
     </edges>
   </graph>
 </gexf>
