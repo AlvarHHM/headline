@@ -46,8 +46,8 @@ define([
              minNodeSize: 0.5,
              maxNodeSize: 5
           });
-
-          sigInst.parseGexf('/output.gexf');
+          var file_name = (window.location.hash && window.location.hash.split("#")[1]) || "output";
+          sigInst.parseGexf('/'+file_name+'.gexf');
           // Draw the graph :
           sigInst.draw();
 
