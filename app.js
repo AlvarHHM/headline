@@ -154,4 +154,8 @@ if (!module.parent) {
   var port = process.env.PORT || 4000;
   app.listen(port);
   console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
+} else {
+  module.exports = {
+    getAll: getAllNodesAndEdges,
+  };
 }
