@@ -64,43 +64,36 @@ app.get('/gexf', function(req, res){
       res.send(file);
     });
   });
-})
+});
 
 app.get('/', function(req, res) {
-	res.render('spa', {title: 'Testers', layout: "layout"})
+	res.render('spa', {title: 'Testers', layout: "layout"});
+});
+
+app.get('/clear', function(req, res) {
+  db.cypherQuery('START n = node(*)\
+                  MATCH n-[r]-()\
+                  DELETE n, r', function(err, result) {
+                    if(err) throw err;
+                    res.send("DONE!");
+                  });
 });
 
 app.post('/add', function(req, res) {
   db.insertNode(req.body.attrs, function(err, node){
       if(err) throw err;
       console.log(node);
-      res.send(node.id);
+      res.redirect('/neo');
   });
 });
 
 app.post('/add_connection', function(req, res) {
-  db.insertRelationship(req.body.nodes[0], req.body.nodes[1], req.body.type, req.body.attrs, function(err, result){
+  db.insertRelationship(req.body.nodes[0], req.body.nodes[1], req.body.type, {}, function(err, result){
     if(err) throw err;
 
     console.log(result);
-    res.send(result.id);
+    res.redirect('/neo');
   }); 
-});
-
-app.get('/grab', function(req, res) {
-  db.insertNode({
-      name: 'Darth Vader',
-      sex: 'male'
-  },function(err, node){
-      if(err) throw err;
-
-      // Output node properties.
-      console.log(node.data);
-
-      // Output node id.
-      console.log(node.id);
-      res.send(node.data);
-  });
 });
 
 app.get('/test', function(req, res) {

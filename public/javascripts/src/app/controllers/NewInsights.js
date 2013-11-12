@@ -7,20 +7,23 @@ define([
     var sigInst = null
       , hidden = false
 
-      , hidePaths = function(event){
-        var nodes = event.content;
+      , getNeighbors = function(nodes) {
         var neighbors = {};
         sigInst.iterEdges(function(e){
-          if(nodes.indexOf(e.source)>=0 || nodes.indexOf(e.target)>=0){
+          if(nodes[e.source] || nodes[e.target]){
             neighbors[e.source] = 1;
             neighbors[e.target] = 1;
           }
-        }).iterNodes(function(n){
-          if(!neighbors[n.id]){
-            n.hidden = 1;
-          }else{
-            n.hidden = 0;
-          }
+        });
+        return neighbors;
+      }
+
+      , hidePaths = function(event){
+        var n = {}
+        n[event.content[0]] = 1;
+        var neighbors = getNeighbors(getNeighbors(n));
+        sigInst.iterNodes(function(n){
+          n.hidden = Number(!neighbors[n.id])
         }).draw(2,2,2);
       }
 
