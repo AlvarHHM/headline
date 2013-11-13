@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gexf xmlns="http://www.gexf.net/1.2draft" version="1.2" xmlns:viz="http://www.gexf.net/1.2draft/viz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd">
+  <meta lastmodifieddate="2013-11-12">
+    <creator>Gephi 0.8.1</creator>
+    <description></description>
+  </meta>
+  <graph defaultedgetype="directed" mode="static">
+    <attributes class="node" mode="static">
+      <attribute id="eccentricity" title="Eccentricity" type="double">
+        <default>0.0</default>
+      </attribute>
+      <attribute id="closnesscentrality" title="Closeness Centrality" type="double">
+        <default>0.0</default>
+      </attribute>
+      <attribute id="betweenesscentrality" title="Betweenness Centrality" type="double">
+        <default>0.0</default>
+      </attribute>
+    </attributes>
+    <nodes>
+      <node id="5" label="Smoking is a blessing and a curse – some love it and some hate it but most are challenged to stop it.">
+        <attvalues>
+          <attvalue for="eccentricity" value="3.0"></attvalue>
+          <attvalue for="closnesscentrality" value="1.8"></attvalue>
+          <attvalue for="betweenesscentrality" value="0.0"></attvalue>
+        </attvalues>
+        <viz:size value="3.0"></viz:size>
+        <viz:position x="-22.961012" y="-10.2270355" z="0.0"></viz:position>
+        <viz:color r="179" g="0" b="0"></viz:color>
+      </node>
+      <node id="6" label="Motivation levels are variable and complex. Successful changers are internally motivated, not doing it for others, but for themselves. Often consumers struggle to discover that intrinsic trigger or motivator">
+        <attvalues>
+          <attvalue for="eccentricity" value="1.0"></attvalue>
+          <attvalue for="closnesscentrality" value="1.0"></attvalue>
+          <attvalue for="betweenesscentrality" value="0.0"></attvalue>
+        </attvalues>
+        <viz:size value="3.0"></viz:size>
+        <viz:position x="-83.431335" y="20.138988" z="0.0"></viz:position>
+        <viz:color r="254" g="240" b="217"></viz:color>
+      </node>
+      <node id="7" label="Embarking on a significant behavior change is scary on two levels. First,  one is changing “WHO” they are and not liking the new person they become. Second,  the possibility of failure is real and daunting">
+        <attvalues>
+          <attvalue for="eccentricity" value="2.0"></attvalue>
+          <attvalue for="closnesscentrality" value="1.4"></attvalue>
+          <attvalue for="betweenesscentrality" value="3.666666666666667"></attvalue>
+        </attvalues>
+        <viz:size value="18.583334"></viz:size>
+        <viz:position x="23.024944" y="-4.4354777" z="0.0"></viz:position>
+        <viz:color r="179" g="0" b="0"></viz:color>
+      </node>
+      <node id="8" label="Consumers manage multiple priorities in life. Environmental stressors  may hinder the quest for behavior change">
+        <attvalues>
+          <attvalue for="eccentricity" value="1.0"></attvalue>
+          <attvalue for="closnesscentrality" value="1.0"></attvalue>
+          <attvalue for="betweenesscentrality" value="1.0"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="-36.61061" y="7.3506575" z="0.0"></viz:position>
+        <viz:color r="179" g="0" b="0"></viz:color>
+      </node>
+      <node id="9" label="Consumers, even those with chronic or serious illness, believe they are invincible">
+        <attvalues>
+          <attvalue for="eccentricity" value="1.0"></attvalue>
+          <attvalue for="closnesscentrality" value="1.0"></attvalue>
+          <attvalue for="betweenesscentrality" value="0.3333333333333333"></attvalue>
+        </attvalues>
+        <viz:size value="4.416667"></viz:size>
+        <viz:position x="-56.277313" y="-12.268829" z="0.0"></viz:position>
+        <viz:color r="229" g="159" b="144"></viz:color>
+      </node>
+      <node id="10" label="People believe they know what to do for their health and what works for their bodies">
+        <attvalues>
+          <attvalue for="eccentricity" value="1.0"></attvalue>
+          <attvalue for="closnesscentrality" value="1.0"></attvalue>
+          <attvalue for="betweenesscentrality" value="1.0"></attvalue>
+        </attvalues>
+        <viz:size value="7.25"></viz:size>
+        <viz:position x="-29.55355" y="32.976204" z="0.0"></viz:position>
+        <viz:color r="179" g="0" b="0"></viz:color>
+      </node>
+      <node id="11" label="I was a sexy, plus size Diva.  Who am I now?">
+        <attvalues>
+          <attvalue for="eccentricity" value="0.0"></attvalue>
+          <attvalue for="closnesscentrality" value="0.0"></attvalue>
+          <attvalue for="betweenesscentrality" value="0.0"></attvalue>
+        </attvalues>
+        <viz:size value="3.0"></viz:size>
+        <viz:position x="-63.08768" y="15.21204" z="0.0"></viz:position>
+        <viz:color r="179" g="0" b="0"></viz:color>
+      </node>
+      <node id="12" label="It was only a matter of time">
+        <attvalues>
+          <attvalue for="eccentricity" value="0.0"></attvalue>
+          <attvalue for="closnesscentrality" value="0.0"></attvalue>
+          <attvalue for="betweenesscentrality" value="0.0"></attvalue>
+        </attvalues>
+        <viz:size value="3.0"></viz:size>
+        <viz:position x="-4.2027683" y="26.979958" z="0.0"></viz:position>
+        <viz:color r="204" g="79" b="72"></viz:color>
+      </node>
+      <node id="13" label="Becoming a better man">
+        <attvalues>
+          <attvalue for="eccentricity" value="0.0"></attvalue>
+          <attvalue for="closnesscentrality" value="0.0"></attvalue>
+          <attvalue for="betweenesscentrality" value="0.0"></attvalue>
+        </attvalues>
+        <viz:size value="3.0"></viz:size>
+        <viz:position x="-11.165258" y="11.05786" z="0.0"></viz:position>
+        <viz:color r="204" g="79" b="72"></viz:color>
+      </node>
+      <node id="14" label="I want to be more green">
+        <attvalues>
+          <attvalue for="eccentricity" value="1.0"></attvalue>
+          <attvalue for="closnesscentrality" value="1.0"></attvalue>
+          <attvalue for="betweenesscentrality" value="4.0"></attvalue>
+        </attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="77.17556" y="-22.82313" z="0.0"></viz:position>
+        <viz:color r="204" g="79" b="72"></viz:color>
+      </node>
+      <node id="15" label="Performance is a key need for men. They will not trade performance for other benefits.">
+        <attvalues>
+          <attvalue for="eccentricity" value="0.0"></attvalue>
+          <attvalue for="closnesscentrality" value="0.0"></attvalue>
+          <attvalue for="betweenesscentrality" value="0.0"></attvalue>
+        </attvalues>
+        <viz:size value="3.0"></viz:size>
+        <viz:position x="109.02059" y="-16.200096" z="0.0"></viz:position>
+        <viz:color r="254" g="240" b="217"></viz:color>
+      </node>
+      <node id="16" label="Consumers tend to shift to the use of green/environmental cleaning products when they have children.">
+        <attvalues>
+          <attvalue for="eccentricity" value="0.0"></attvalue>
+          <attvalue for="closnesscentrality" value="0.0"></attvalue>
+          <attvalue for="betweenesscentrality" value="0.0"></attvalue>
+        </attvalues>
+        <viz:size value="3.0"></viz:size>
+        <viz:position x="98.06451" y="-47.76634" z="0.0"></viz:position>
+        <viz:color r="254" g="240" b="217"></viz:color>
+      </node>
+    </nodes>
+    <edges>
+      <edge id="2" source="5" target="7">
+        <attvalues></attvalues>
+      </edge>
+      <edge id="3" source="5" target="8">
+        <attvalues></attvalues>
+      </edge>
+      <edge id="4" source="5" target="9">
+        <attvalues></attvalues>
+      </edge>
+      <edge id="5" source="5" target="10">
+        <attvalues></attvalues>
+      </edge>
+      <edge id="9" source="6" target="11">
+        <attvalues></attvalues>
+      </edge>
+      <edge id="10" source="7" target="12">
+        <attvalues></attvalues>
+      </edge>
+      <edge id="13" source="7" target="13">
+        <attvalues></attvalues>
+      </edge>
+      <edge id="17" source="7" target="14">
+        <attvalues></attvalues>
+      </edge>
+      <edge id="6" source="8" target="11">
+        <attvalues></attvalues>
+      </edge>
+      <edge id="11" source="8" target="12">
+        <attvalues></attvalues>
+      </edge>
+      <edge id="14" source="8" target="13">
+        <attvalues></attvalues>
+      </edge>
+      <edge id="7" source="9" target="11">
+        <attvalues></attvalues>
+      </edge>
+      <edge id="8" source="10" target="11">
+        <attvalues></attvalues>
+      </edge>
+      <edge id="12" source="10" target="12">
+        <attvalues></attvalues>
+      </edge>
+      <edge id="15" source="10" target="13">
+        <attvalues></attvalues>
+      </edge>
+      <edge id="16" source="14" target="15">
+        <attvalues></attvalues>
+      </edge>
+      <edge id="18" source="14" target="16">
+        <attvalues></attvalues>
+      </edge>
+    </edges>
+  </graph>
+</gexf>
